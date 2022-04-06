@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`index page 1`] = `
+.emotion-0 {
+  background-color: lightblue;
+}
+
+<div
+  class="emotion-0"
+>
+  index
+</div>
+`;

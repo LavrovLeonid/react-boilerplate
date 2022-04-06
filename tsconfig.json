@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "target": "es2016",
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "noEmit": true,
+    "baseUrl": "./",
+    "paths": {
+      "@shared/*": ["src/shared/*"],
+      "@client/*": ["src/client/*"],
+      "@server/*": ["src/server/*"],
+      "@pages/*": ["src/shared/pages/*"],
+      "@utils/*": ["src/shared/utils/*"],
+      "@public/*": ["public/*"]
+    }
+  }
+}

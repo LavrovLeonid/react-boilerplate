@@ -6,12 +6,11 @@ import { prependDocument } from './utils';
 
 prependDocument();
 
-const root = document.querySelector('#root');
+const element = document.querySelector('#root') ?? document.body;
+const root = createRoot(element);
 
-if (root) {
-  createRoot(root).render(
-    <HistoryRouter history={history}>
-      <Index />
-    </HistoryRouter>,
-  );
-}
+root.render(
+  <HistoryRouter history={history}>
+    <Index />
+  </HistoryRouter>,
+);

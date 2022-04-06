@@ -1,12 +1,13 @@
 import { FC } from 'react';
-import { BrowserRouter } from 'react-router-dom';
+import { unstable_HistoryRouter as HistoryRouter } from 'react-router-dom';
 // eslint-disable-next-line import/no-extraneous-dependencies -- Не используется в продакшене
 import { render } from '@testing-library/react';
 // eslint-disable-next-line import/no-extraneous-dependencies -- Не используется в продакшене
 import userEvent from '@testing-library/user-event';
+import { history } from '@utils/history';
 
 const AllTheProviders: FC = ({ children }) => (
-  <BrowserRouter>{children}</BrowserRouter>
+  <HistoryRouter history={history}>{children}</HistoryRouter>
 );
 
 const customRender = (
@@ -18,7 +19,7 @@ const renderWithRouter = (
   ui: Parameters<typeof render>[0],
   { route = '/' } = {},
 ) => {
-  window.history.pushState({}, 'Test page', route);
+  history.push(route);
 
   return {
     user: userEvent.setup(),
